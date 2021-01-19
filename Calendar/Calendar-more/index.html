@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./mobileSelect.css">
+    <link rel="stylesheet" href="./Calendar.css">
+</head>
+
+<body>
+    <div class="time-wrap">
+        <!-- 上方日期 -->
+        <div class="week-wrap van-swipe">
+            <div class="week-days" id="dayScroll">
+                <div class="rowday">
+                    <table id="daysList" cellspacing="">
+                        <tr class="week-bar">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr id="changeDay">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 侧方小日历 -->
+        <div class="right-wrap" id="wrapClick">
+            <!-- <i class="fa fa-calendar fa-2x" aria-hidden="true"></i> -->
+        </div>
+    </div>
+    <!-- 日历弹窗 -->
+    <div class="popup van-popup van-popup-bg">
+        <!-- title -->
+        <div class="title">
+            选择日期
+            <div class="Cancel" id="cancel"></div>
+        </div>
+        <!-- 年月选择 -->
+        <div class="choose-outest">
+            <!-- 年 -->
+            <div class="year">
+                <span class="now-year" id="now-year">
+
+                    <i class="fa fa-arrow-down " aria-hidden="true"></i>
+                </span>
+            </div>
+            <!-- 月 -->
+            <div class="month" id="month">
+                <div class="month-scroll" id="month-scroll">
+
+                </div>
+
+
+            </div>
+
+        </div>
+        <!-- 固定一周的7天 -->
+        <div class="week">
+            <div class="weekend"><span>日</span></div>
+            <div><span>一</span></div>
+            <div><span>二</span></div>
+            <div><span>三</span></div>
+            <div><span>四</span></div>
+            <div><span>五</span></div>
+            <div class="saturday"><span>六</span></div>
+        </div>
+
+        <!-- 日历展示 -->
+        <div class="days" id="days">
+
+        </div>
+
+    </div>
+    <script src="./myClick.js"></script>
+    <script src="./mobileSelect.js"></script>
+    <script>
+        // var mySwiper = new Swiper('.swiper-container');
+        var mobileSelect = new MobileSelect({
+            trigger: '#now-year',
+            title: '年限选择',
+            wheels: [{
+                data: [{
+                    id: '1',
+                    value: '2019年'
+                }, {
+                    id: '2',
+                    value: '2020年'
+                }, {
+                    id: '3',
+                    value: '2021年'
+                }, {
+                    id: '4',
+                    value: '2022年'
+                }, {
+                    id: '5',
+                    value: '2023年'
+                }]
+            }],
+            position: [1],
+            //修改年限
+            callback: function(indexArr, data) {
+                // console.log(parseInt(data[0].value))
+                curYear = parseInt(data[0].value)
+                render(curYear, curMonth)
+            }
+        })
+    </script>
+</body>
+
+</html>
