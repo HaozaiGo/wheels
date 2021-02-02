@@ -9,6 +9,12 @@
         padding: 15vh 16vw 3vh 16vw;
         height: 100%;
     }
+    .childContent {
+        padding: 6vh 15vw;
+    }
+    .footerContent {
+        padding: 4vh 15vw;
+    }
 }
 
 
@@ -22,6 +28,12 @@
     html,
     body {
         font-size: 80px;
+    }
+    .childContent {
+        padding: 6vh 14vw;
+    }
+    .footerContent {
+        padding: 4vh 14vw;
     }
 }
 
@@ -37,6 +49,12 @@
     body {
         font-size: 80px;
     }
+    .childContent {
+        padding: 4vh 8vw;
+    }
+    .footerContent {
+        padding: 4vh 8vw;
+    }
 }
 
 
@@ -51,6 +69,9 @@
     body {
         font-size: 70px;
     }
+    .childContent {
+        padding: 5vh 0;
+    }
 }
 
 
@@ -63,6 +84,9 @@
     }
     .rowContent {
         padding: 6.6vh 5vw 3vh 5vw;
+    }
+    .footerContent {
+        padding: 2vh 5vw;
     }
 }
 
